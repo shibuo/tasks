@@ -1,0 +1,16 @@
+// Что такое анаграмма?
+//
+//     Два слова являются анаграммами между собой, если они оба содержат одинаковые буквы.
+//
+//     Например: 'abba' & 'baab' == true
+//
+// Напишите функцию, которая находит все анаграммы слова из списка. В качестве параметра даны слово и массив слов.
+// Функция должна возвращать массив всех анаграмм или пустой массив, если анаграмм не обнаружено.
+
+const anagrams = function (str, arr){
+   const result = []
+   arr.map((item) => {if(item.split("").sort().join("") === str.split("").sort().join("")){result.push(item)}})
+   console.log(result)
+}
+anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']) // ['aabb', 'bbaa']
+anagrams("cat", ["tac", "cta", "act", "dada"]) // [ 'tac', 'cta', 'act' ]
